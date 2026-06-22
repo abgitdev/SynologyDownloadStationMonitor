@@ -1,0 +1,25 @@
+name: build
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [ '**.md', 'docs/**', 'LICENSE' ]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select newest Xcode
+        run: |
+          latest=$(ls -d /Applications/Xcode*.app | sort -V | tail -1)
+          sudo xcode-select -s "$latest/Contents/Developer"
+          swiftc --version
+      - name: Build (no signing)
+        run: |
+          # The whole app is a single file in the repo root (no Sources/).
+          # -parse-as-library is required because of @main. Compiling without
+          # signing is proof the build is green.
+          swiftc -O -parse-as-library -o /tmp/sdsm SynologyDownloadStationMonitor.swift

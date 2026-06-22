@@ -1,0 +1,115 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon?
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+
+# Xcode and Swift build output
+.build/
+build/
+Build/
+DerivedData/
+*.o
+*.swiftmodule
+*.swiftdoc
+*.swiftinterface
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM/
+*.xcarchive/
+*.xcresult/
+
+# App bundles and release artifacts
+*.app/
+*.appex/
+*.app.zip
+*.zip
+*.dmg
+*.pkg
+dist/
+release/
+artifacts/
+BuildIcon/
+
+# Logs, crashes, temp and cache files
+*.log
+*.trace
+*.crash
+*.ips
+logs/
+CrashReporter/
+DiagnosticReports/
+Library/Logs/
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+.cache/
+tmp/
+temp/
+
+# Local environment and secrets
+.env
+.env.*
+*.key
+*.keychain
+*.keychain-db
+*.pem
+*.cer
+*.der
+*.crt
+*.csr
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+*.xcconfig.local
+
+# User-specific app state must never be committed
+*.plist.lockfile
+Library/Preferences/
+Preferences/
+UserDefaults/
+com.local.SynologyDownloadStationMonitor.native.plist
+com.local.SynologyDownloadStationMonitor*.plist
+# Current bundle id (NAS IP + username live in this prefs plist) — match by filename in
+# any directory so it's excluded regardless of location (audit F21).
+com.abgitdev.SynologyDownloadStationMonitor*.plist
+com.*.SynologyDownloadStationMonitor*.plist
+
+# Source backups (e.g. SynologyDownloadStationMonitor.swift.bak-20260622-150236)
+*.bak
+*.bak-*
+*.bak.*
+
+# Claude Code config, transcripts, and project memory — developer-local & personal
+.claude/
+CLAUDE.md
+memory/
+
+# Internal dev/audit docs — contain NAS IPs, usernames, and personal task names;
+# must NOT go to the public repo.
+AUDIT.md
+AUDIT-PHASE3.md
+.audit-findings.json
+.audit-phase3-findings.json
+КАК_ПУБЛИКОВАТЬ_ПРОЕКТЫ_НА_GITHUB.md
+# Catch any other audit/plan/security-review docs by name, wherever they land.
+*audit*.md
+*Audit*.md
+*cold-audit*.md
+PLAN-*.md
+GITHUB_PUBLISH_GUIDE.md
